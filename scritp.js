@@ -17,9 +17,7 @@ function checkOff() {
   var div = document.getElementById(this.id).parentElement;
   var rect = div.getBoundingClientRect();
   div.style.animation = "pop .5s";
-  console.log("animate");
   setTimeout(del, 500, div, rect.top, rect.left);
-  console.log("timer set");
 }
 
 function px(num, add) {
@@ -28,7 +26,6 @@ function px(num, add) {
 
 function getRand(list) {
   randomidx = Math.floor(Math.random() * list.length);
-  console.log(list[randomidx]);
   return list[randomidx];
 }
 
@@ -43,10 +40,8 @@ function confetti(x, y) {
     document.body.appendChild(dot);
   }
 
-  console.log(document.getElementsByClassName("dot"));
   setTimeout(
     function (dots) {
-      console.log(dots);
       dots.forEach((element) => {
         element.remove();
       });
