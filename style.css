@@ -1,0 +1,131 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  z-index: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightblue;
+  z-index: 0;
+}
+
+.container {
+  display: flex;
+  width: calc(25% + 20px);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  outline: solid 1px;
+  background-color: lightcoral;
+  padding: 0px 0px 5px 0px;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.text {
+  text-align: center;
+  background-color: lightcoral;
+  border-radius: 5px 5px 0px 0px;
+  padding: 10px 0px;
+  border-bottom: dotted;
+  width: 100%;
+  z-index: 0;
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  outline: solid 0px;
+  width: 95%;
+  padding: 10px 0px;
+  z-index: 0;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightgoldenrodyellow;
+  border-radius: 5px;
+  padding: 5px;
+  width: 75%;
+  height: 20px;
+  margin: 2px;
+  z-index: 0;
+}
+
+.listText {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lightpink;
+  padding: 2px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  z-index: 0;
+}
+
+.listButton {
+  margin-left: auto;
+  z-index: 0;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  background-color: rgb(0, 187, 249);
+  z-index: 100;
+  animation-duration: 5000ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fall-1 {
+  0% {
+    transform: translate(0px, 0px) rotateX(45deg) rotateY(30deg) rotateZ(0deg);
+    opacity: 1;
+  }
+
+  5% {
+    transform: translate(0px, -10px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-10px, 200px) rotateX(180deg) rotateY(270deg)
+      rotateZ(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fall-2 {
+  0% {
+    transform: translate(0px, 0px) rotateX(5deg) rotateY(45deg) rotateZ(60deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(10px, 200px) rotateX(270deg) rotateY(180deg)
+      rotateZ(360deg);
+    opacity: 0;
+  }
+}
+
+#text-box {
+  padding: 10px;
+  border-radius: 5px;
+  width: 70%;
+  z-index: 0;
+}
+
+#submit-button {
+  width: 30%;
+  border-radius: 5px;
+  z-index: 0;
+}
