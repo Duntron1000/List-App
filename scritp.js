@@ -6,12 +6,20 @@ const colors = [
   "#fde68a",
   "#f9a8d4",
 ];
-const animations = ["fall-1", "fall-2"];
+const animations = ["fall-1", "fall-2", "fall-3"];
+
+function del(element, top, left) {
+  element.remove();
+  setTimeout(confetti, 50, top - 100, left);
+}
 
 function checkOff() {
-  var rect = this.getBoundingClientRect();
-  confetti(rect.top - 100, rect.left - 100);
-  document.getElementById(this.id).parentElement.remove();
+  var div = document.getElementById(this.id).parentElement;
+  var rect = div.getBoundingClientRect();
+  div.style.animation = "pop .5s";
+  console.log("animate");
+  setTimeout(del, 500, div, rect.top, rect.left);
+  console.log("timer set");
 }
 
 function px(num, add) {
@@ -25,11 +33,11 @@ function getRand(list) {
 }
 
 function confetti(x, y) {
-  for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < 30; i++) {
     var dot = document.createElement("div");
     dot.className = "dot";
-    dot.style.left = px(y, Math.random() * 200);
-    dot.style.top = px(x, Math.random() * 200);
+    dot.style.left = px(y, Math.random() * 300);
+    dot.style.top = px(x, Math.random() * 300);
     dot.style.backgroundColor = getRand(colors);
     dot.style.animationName = getRand(animations);
     document.body.appendChild(dot);
@@ -71,6 +79,14 @@ function addItem() {
     count++;
   }
 }
+
+var textbox = document.getElementById("text-box");
+
+textbox.addEventListener("keydown", function (e) {
+  if (e.code == "Enter") {
+    addItem();
+  }
+});
 
 var submitButton = document.getElementById("submit-button");
 
